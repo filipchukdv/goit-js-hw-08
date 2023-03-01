@@ -27,7 +27,7 @@ function onFormSubmit(event) {
   event.preventDefault();
   console.log('email :' + storage.email);
   console.log('message :' + storage.textarea);
-  storage = null;
+  storage = {};
   localStorage.clear();
   emailRef.value = '';
   messageRef.value = '';
