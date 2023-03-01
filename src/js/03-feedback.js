@@ -9,7 +9,6 @@ let storage = {};
 if (localStorage.getItem('feedback-form-state')) {
   try {
     storage = JSON.parse(localStorage.getItem('feedback-form-state'));
-    console.log('storage :', storage);
     emailRef.value = storage.email;
     messageRef.value = storage.textarea;
   } catch (error) {
@@ -26,6 +25,8 @@ function onInputChange(event) {
 
 function onFormSubmit(event) {
   event.preventDefault();
+  console.log('email :' + storage.email);
+  console.log('message :' + storage.textarea);
   storage = null;
   localStorage.clear();
   emailRef.value = '';
